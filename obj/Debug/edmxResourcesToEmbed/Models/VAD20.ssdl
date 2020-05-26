@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VAD20Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.MA_ACTUALIZACION_INVENTARIO_PENDIENTE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MA_ACTUALIZACION_INVENTARIO_PENDIENTE">
+    <Key>
+      <PropertyRef Name="cs_codcaja" />
+      <PropertyRef Name="cs_codcajero" />
+      <PropertyRef Name="cs_descripcioncajero" />
+      <PropertyRef Name="cs_codlocalidad" />
+      <PropertyRef Name="ns_turno" />
+      <PropertyRef Name="cs_codusuario" />
+      <PropertyRef Name="ds_fechacierre" />
+      <PropertyRef Name="ds_fechafallo" />
+    </Key>
+    <Property Name="cs_codcaja" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cs_codcajero" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cs_descripcioncajero" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_codlocalidad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ns_turno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cs_codusuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ds_fechacierre" Type="datetime" Nullable="false" />
+    <Property Name="ds_fechafallo" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CAJA">
+    <Key>
+      <PropertyRef Name="C_Codigo" />
+      <PropertyRef Name="C_CODLOCALIDAD" />
+    </Key>
+    <Property Name="C_Codigo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_Desc_Caja" Type="varchar" MaxLength="50" />
+    <Property Name="C_relacion" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Bayuda" Type="bit" Nullable="false" />
+    <Property Name="Cayuda" Type="bit" Nullable="false" />
+    <Property Name="Nayuda" Type="int" Nullable="false" />
+    <Property Name="Blimite" Type="bit" Nullable="false" />
+    <Property Name="Climite" Type="bit" Nullable="false" />
+    <Property Name="Nlimite" Type="int" Nullable="false" />
+    <Property Name="Bproductos" Type="bit" Nullable="false" />
+    <Property Name="Cproductos" Type="bit" Nullable="false" />
+    <Property Name="Nproductos" Type="int" Nullable="false" />
+    <Property Name="Bcantidad" Type="bit" Nullable="false" />
+    <Property Name="Ccantidad" Type="bit" Nullable="false" />
+    <Property Name="Ncantidad" Type="int" Nullable="false" />
+    <Property Name="Bbalanza" Type="bit" Nullable="false" />
+    <Property Name="Cbalanza" Type="bit" Nullable="false" />
+    <Property Name="Nbalanza" Type="int" Nullable="false" />
+    <Property Name="Breintegro" Type="bit" Nullable="false" />
+    <Property Name="Creintegro" Type="bit" Nullable="false" />
+    <Property Name="Nreintegro" Type="int" Nullable="false" />
+    <Property Name="Bparcial" Type="bit" Nullable="false" />
+    <Property Name="Cparcial" Type="bit" Nullable="false" />
+    <Property Name="Nparcial" Type="int" Nullable="false" />
+    <Property Name="Bespera" Type="bit" Nullable="false" />
+    <Property Name="Cespera" Type="bit" Nullable="false" />
+    <Property Name="Nespera" Type="int" Nullable="false" />
+    <Property Name="Bsuspender" Type="bit" Nullable="false" />
+    <Property Name="Csuspender" Type="bit" Nullable="false" />
+    <Property Name="Nsuspender" Type="int" Nullable="false" />
+    <Property Name="Bdevolucion" Type="bit" Nullable="false" />
+    <Property Name="Cdevolucion" Type="bit" Nullable="false" />
+    <Property Name="Ndevolucion" Type="int" Nullable="false" />
+    <Property Name="Bprecios" Type="bit" Nullable="false" />
+    <Property Name="Cprecios" Type="bit" Nullable="false" />
+    <Property Name="Nprecios" Type="int" Nullable="false" />
+    <Property Name="Bcliente" Type="bit" Nullable="false" />
+    <Property Name="Ccliente" Type="bit" Nullable="false" />
+    <Property Name="Ncliente" Type="int" Nullable="false" />
+    <Property Name="NCierre" Type="int" Nullable="false" />
+    <Property Name="Gabeta" Type="int" Nullable="false" />
+    <Property Name="Gserial" Type="bit" Nullable="false" />
+    <Property Name="Gpuerto" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Gbaudios" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Gparidad" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Gbit" Type="int" Nullable="false" />
+    <Property Name="Gparada" Type="float" Nullable="false" />
+    <Property Name="Gcontrol" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Balanza" Type="int" Nullable="false" />
+    <Property Name="Bpuerto" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Bbaudios" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bparidad" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Bbit" Type="int" Nullable="false" />
+    <Property Name="Bparada" Type="float" Nullable="false" />
+    <Property Name="Bcontrol" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Scanner" Type="int" Nullable="false" />
+    <Property Name="Spuerto" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Sbaudios" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sparidad" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Sbit" Type="int" Nullable="false" />
+    <Property Name="Sparada" Type="float" Nullable="false" />
+    <Property Name="Scontrol" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Display" Type="int" Nullable="false" />
+    <Property Name="Dpuerto" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Dbaudios" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Dparidad" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Dbit" Type="int" Nullable="false" />
+    <Property Name="Dparada" Type="float" Nullable="false" />
+    <Property Name="Imp_ordenada" Type="bit" Nullable="false" />
+    <Property Name="Imp_agrupada" Type="bit" Nullable="false" />
+    <Property Name="Imp_LxL" Type="bit" Nullable="false" />
+    <Property Name="COpenpos" Type="bit" Nullable="false" />
+    <Property Name="NOpenpos" Type="int" Nullable="false" />
+    <Property Name="CClosepos" Type="bit" Nullable="false" />
+    <Property Name="NClosepos" Type="int" Nullable="false" />
+    <Property Name="Mensaje1" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mensaje2" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mensaje3" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mensaje4" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mensaje5" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Dno_lineas" Type="int" Nullable="false" />
+    <Property Name="Dca_lineas" Type="int" Nullable="false" />
+    <Property Name="Impresora" Type="int" Nullable="false" />
+    <Property Name="IPuerto" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Ibaudios" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Iparidad" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Ibit" Type="int" Nullable="false" />
+    <Property Name="Iparada" Type="float" Nullable="false" />
+    <Property Name="NO_CIERRES" Type="float" Nullable="false" />
+    <Property Name="Dato_string" Type="bit" Nullable="false" />
+    <Property Name="Forma_continua" Type="bit" Nullable="false" />
+    <Property Name="no_lineas" Type="int" Nullable="false" />
+    <Property Name="ihojilla" Type="bit" Nullable="false" />
+    <Property Name="hojilla_caracter" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="imp_incluido" Type="bit" Nullable="false" />
+    <Property Name="C_CODDEPOSITO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_CODLOCALIDAD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="C_CODMONEDA" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="B_SOLICITAR_FONDO" Type="bit" Nullable="false" />
+    <Property Name="B_POS_DIGITAL" Type="bit" Nullable="false" />
+    <Property Name="B_OPOS" Type="bit" Nullable="false" />
+    <Property Name="C_OPOSD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSG" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSS" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSBA" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSB" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOSI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_OPOST" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="banda" Type="int" Nullable="false" />
+    <Property Name="bmpuerto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bmbaudios" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bmparidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bmbit" Type="int" Nullable="false" />
+    <Property Name="bmparada" Type="float" Nullable="false" />
+    <Property Name="llaves" Type="bit" Nullable="false" />
+    <Property Name="imp_cheques" Type="bit" Nullable="false" />
+    <Property Name="rotacion" Type="int" Nullable="false" />
+    <Property Name="LAYUDA" Type="int" Nullable="false" />
+    <Property Name="LPRODUCTOS" Type="int" Nullable="false" />
+    <Property Name="LLIMITE" Type="int" Nullable="false" />
+    <Property Name="LCANTIDAD" Type="int" Nullable="false" />
+    <Property Name="LBALANZA" Type="int" Nullable="false" />
+    <Property Name="LREINTEGRO" Type="int" Nullable="false" />
+    <Property Name="LESPERA" Type="int" Nullable="false" />
+    <Property Name="LSUSPENDER" Type="int" Nullable="false" />
+    <Property Name="LDEVOLUCION" Type="int" Nullable="false" />
+    <Property Name="LPRECIOS" Type="int" Nullable="false" />
+    <Property Name="LCLIENTE" Type="int" Nullable="false" />
+    <Property Name="LCERRAR" Type="int" Nullable="false" />
+    <Property Name="LPARCIAL" Type="int" Nullable="false" />
+    <Property Name="tiempovuelto" Type="float" Nullable="false" />
+    <Property Name="n_transacciones" Type="int" Nullable="false" />
+    <Property Name="b_ventas_volumen" Type="bit" Nullable="false" />
+    <Property Name="cs_formatoFactura" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_formatoDevolucion" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_formatoReintegro" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_formatoEspera" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="bs_FacturaPuerto" Type="bit" Nullable="false" />
+    <Property Name="bs_DevolucionPuerto" Type="bit" Nullable="false" />
+    <Property Name="bs_ReintegroPuerto" Type="bit" Nullable="false" />
+    <Property Name="bs_EsperaPuerto" Type="bit" Nullable="false" />
+    <Property Name="B_POS_PEDIDO" Type="bit" Nullable="false" />
+    <Property Name="bu_administra_clientes" Type="bit" Nullable="false" />
+    <Property Name="bu_AUTODECLARACION" Type="bit" Nullable="false" />
+    <Property Name="bu_CHEQUE_POR_PUERTO" Type="bit" Nullable="false" />
+    <Property Name="bu_LLEVAR_LOCAL" Type="bit" Nullable="false" />
+    <Property Name="bu_COMANDA_REMOTA" Type="bit" Nullable="false" />
+    <Property Name="bu_ESSHELL" Type="int" Nullable="false" />
+    <Property Name="bu_COMANDA_LOCAL" Type="bit" Nullable="false" />
+    <Property Name="bu_LLEVAR_REMOTA" Type="bit" Nullable="false" />
+    <Property Name="bu_POR_PUERTO" Type="bit" Nullable="false" />
+    <Property Name="CU_PREGUNTAR_IMPRIMIR_FACTURA" Type="bit" Nullable="false" />
+    <Property Name="CU_IMPRESORA_FACTURAR" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CU_IMPRESORA_CHEQUE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="fu_hora_cierre" Type="datetime" />
+    <Property Name="fu_hora_cierre_max" Type="datetime" />
+    <Property Name="nu_campo_busqueda" Type="int" Nullable="false" />
+    <Property Name="nu_maximo_consumo_imprimir" Type="int" Nullable="false" />
+    <Property Name="nu_tipo_precio" Type="int" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="bs_ImpresoraFiscal" Type="bit" Nullable="false" />
+    <Property Name="cs_SerialFiscal" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CAJA_BOTONES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="POSICION" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TECLA" Type="int" Nullable="false" />
+    <Property Name="SHIFT" Type="int" Nullable="false" />
+    <Property Name="TIPOPOS" Type="int" Nullable="false" />
+    <Property Name="BNIVEL" Type="bit" Nullable="false" />
+    <Property Name="BLLAVE" Type="bit" Nullable="false" />
+    <Property Name="BACTIVO" Type="bit" Nullable="false" />
+    <Property Name="BDEFAULT" Type="bit" Nullable="false" />
+    <Property Name="COMENTARIO" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ResourceID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CAJA_CONFIGURACION">
+    <Key>
+      <PropertyRef Name="CAJA" />
+      <PropertyRef Name="NOMBRE_BOTON" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="POSICION" Type="int" Nullable="false" />
+    <Property Name="NOMBRE_BOTON" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TECLA" Type="int" Nullable="false" />
+    <Property Name="SHIFT" Type="int" Nullable="false" />
+    <Property Name="ACTIVO" Type="bit" Nullable="false" />
+    <Property Name="NIVEL" Type="int" Nullable="false" />
+    <Property Name="LLAVE" Type="int" Nullable="false" />
+    <Property Name="BNIVEL" Type="bit" Nullable="false" />
+    <Property Name="BLLAVE" Type="bit" Nullable="false" />
+    <Property Name="BACTIVO" Type="bit" Nullable="false" />
+    <Property Name="ResourceID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CAMBIOS">
+    <Key>
+      <PropertyRef Name="C_DOCUMENTO" />
+      <PropertyRef Name="C_CODLOCALIDAD" />
+    </Key>
+    <Property Name="C_DOCUMENTO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="F_FECHA" Type="datetime" Nullable="false" />
+    <Property Name="C_CODLOCALIDAD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="C_OBSERVACION" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="C_CONCEPTO" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_EMISOR" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CIERRES">
+    <Key>
+      <PropertyRef Name="c_DOCUMENTO" />
+      <PropertyRef Name="c_CODCAJA" />
+      <PropertyRef Name="c_CODCAJERO" />
+      <PropertyRef Name="c_CODLOCALIDAD" />
+      <PropertyRef Name="c_CONCEPTO" />
+      <PropertyRef Name="c_CODUSUARIO" />
+      <PropertyRef Name="turno" />
+    </Key>
+    <Property Name="c_DOCUMENTO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_CODCAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_CODCAJERO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_CODLOCALIDAD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_CONCEPTO" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="d_FECHA" Type="datetime" />
+    <Property Name="n_BSRECIBIDOS" Type="float" />
+    <Property Name="n_DIFERENCIA" Type="float" />
+    <Property Name="c_OBSERVACION" Type="ntext" />
+    <Property Name="c_CODUSUARIO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_des_cajera" Type="nvarchar" MaxLength="50" />
+    <Property Name="n_BSVENDIDO" Type="float" />
+    <Property Name="n_SUBTOTAL" Type="float" />
+    <Property Name="n_IMPUESTO" Type="float" />
+    <Property Name="n_CLIENTE" Type="float" />
+    <Property Name="h_INICIO" Type="datetime" />
+    <Property Name="h_FINAL" Type="datetime" />
+    <Property Name="n_reintegros" Type="int" />
+    <Property Name="n_devolucion" Type="int" />
+    <Property Name="n_montodevolucion" Type="float" />
+    <Property Name="n_cortesparciales" Type="int" />
+    <Property Name="n_montocortes" Type="float" />
+    <Property Name="c_num_cierre" Type="varchar" MaxLength="15" />
+    <Property Name="turno" Type="float" Nullable="false" />
+    <Property Name="n_imp_devolucion" Type="float" />
+    <Property Name="D_FECHA_CIERRE" Type="datetime" />
+    <Property Name="n_monto_reintegros" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CIERRExFACTURA">
+    <Key>
+      <PropertyRef Name="CU_CODCAJA" />
+      <PropertyRef Name="CU_NUMFACTURA" />
+      <PropertyRef Name="CU_NUMCIERRE" />
+      <PropertyRef Name="CU_CODCAJEROPOS" />
+      <PropertyRef Name="CU_CONCEPTO" />
+    </Key>
+    <Property Name="CU_CODCAJA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CU_NUMFACTURA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CU_NUMCIERRE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CU_CODCAJEROPOS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CU_CONCEPTO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CODIGOS">
+    <Key>
+      <PropertyRef Name="c_CodNasa" />
+      <PropertyRef Name="c_Codigo" />
+    </Key>
+    <Property Name="c_CodNasa" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_Codigo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_Descripcion" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="n_Cantidad" Type="int" Nullable="false" />
+    <Property Name="nu_Intercambio" Type="int" Nullable="false" />
+    <Property Name="nu_TipoPrecio" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.MA_CONCEPTOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MA_CONCEPTOS">
+    <Key>
+      <PropertyRef Name="IDCONCEPTO" />
+      <PropertyRef Name="DESCRIPCION" />
+      <PropertyRef Name="IDPROCESO" />
+      <PropertyRef Name="DE_SISTEMA" />
+      <PropertyRef Name="Documento" />
+      <PropertyRef Name="Predeterminada" />
+      <PropertyRef Name="nu_nivelusuario" />
+      <PropertyRef Name="bu_activo" />
+      <PropertyRef Name="bu_consideraimpuesto" />
+      <PropertyRef Name="bu_Conceptodeservicio" />
+      <PropertyRef Name="bu_ConsideraLibro" />
+      <PropertyRef Name="bu_ConceptoRetencion" />
+      <PropertyRef Name="bu_RequiereUnidad" />
+      <PropertyRef Name="bu_ConsolidarFactura" />
+    </Key>
+    <Property Name="IDCONCEPTO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="IDPROCESO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DE_SISTEMA" Type="int" Nullable="false" />
+    <Property Name="Documento" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Predeterminada" Type="int" Nullable="false" />
+    <Property Name="nu_nivelusuario" Type="int" Nullable="false" />
+    <Property Name="bu_activo" Type="bit" Nullable="false" />
+    <Property Name="bu_consideraimpuesto" Type="bit" Nullable="false" />
+    <Property Name="bu_Conceptodeservicio" Type="bit" Nullable="false" />
+    <Property Name="bu_ConsideraLibro" Type="bit" Nullable="false" />
+    <Property Name="bu_ConceptoRetencion" Type="bit" Nullable="false" />
+    <Property Name="bu_RequiereUnidad" Type="bit" Nullable="false" />
+    <Property Name="bu_ConsolidarFactura" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_CONSUMO_TIPOS">
+    <Key>
+      <PropertyRef Name="cs_CodigoServicio" />
+    </Key>
+    <Property Name="cs_CodigoServicio" Type="int" Nullable="false" />
+    <Property Name="cs_Descripcion_Servicio" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DescResourceID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.MA_CORRELATIVO_RETENCION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MA_CORRELATIVO_RETENCION">
+    <Key>
+      <PropertyRef Name="CS_CAMPO" />
+      <PropertyRef Name="CS_DESCRIPCION" />
+    </Key>
+    <Property Name="CS_CAMPO" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CS_DESCRIPCION" Type="nvarchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.MA_DENOMINACIONES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MA_DENOMINACIONES">
+    <Key>
+      <PropertyRef Name="c_codmoneda" />
+      <PropertyRef Name="c_coddenomina" />
+      <PropertyRef Name="c_denominacion" />
+      <PropertyRef Name="n_valor" />
+      <PropertyRef Name="c_real" />
+      <PropertyRef Name="N_CANTIDAD" />
+      <PropertyRef Name="N_BOLIVARES" />
+      <PropertyRef Name="N_ENTRADO" />
+      <PropertyRef Name="N_FACTOR" />
+    </Key>
+    <Property Name="c_codmoneda" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_coddenomina" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_denominacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="n_valor" Type="float" Nullable="false" />
+    <Property Name="c_real" Type="int" Nullable="false" />
+    <Property Name="N_CANTIDAD" Type="float" Nullable="false" />
+    <Property Name="N_BOLIVARES" Type="float" Nullable="false" />
+    <Property Name="N_ENTRADO" Type="float" Nullable="false" />
+    <Property Name="N_FACTOR" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_DETALLEPAGO">
+    <Key>
+      <PropertyRef Name="c_Caja" />
+      <PropertyRef Name="c_Factura" />
+      <PropertyRef Name="c_CodMoneda" />
+      <PropertyRef Name="c_CodDenominacion" />
+      <PropertyRef Name="d_Fecha" />
+      <PropertyRef Name="c_CodCajero" />
+      <PropertyRef Name="c_Localidad" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="c_Caja" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_Factura" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_CodMoneda" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="n_Factor" Type="float" Nullable="false" />
+    <Property Name="c_CodDenominacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_Banco" Type="varchar" MaxLength="50" />
+    <Property Name="c_Numero" Type="varchar" MaxLength="20" />
+    <Property Name="n_Monto" Type="float" Nullable="false" />
+    <Property Name="c_Util" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="d_Fecha" Type="datetime" Nullable="false" />
+    <Property Name="n_Falta" Type="float" Nullable="false" />
+    <Property Name="c_CodBanco" Type="varchar" MaxLength="10" />
+    <Property Name="c_CodCajero" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="f_Hora" Type="datetime" Nullable="false" />
+    <Property Name="c_Localidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Turno" Type="float" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_DISPOSITIVOS">
+    <Key>
+      <PropertyRef Name="cs_CODIGO" />
+    </Key>
+    <Property Name="cs_PNEMOTECNICO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cs_DESCRIPCION" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_CODIGO" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_DISPOSITIVOS_CAJA">
+    <Key>
+      <PropertyRef Name="CAJA" />
+      <PropertyRef Name="cs_CODIGODISPOSITIVO" />
+    </Key>
+    <Property Name="CAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="cs_CODIGODISPOSITIVO" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="cu_PUERTO" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_BAUDIOS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_PARIDAD" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="cu_PARADA" Type="int" Nullable="false" />
+    <Property Name="cu_BITDATOS" Type="int" Nullable="false" />
+    <Property Name="cu_CARCONTROL" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_COMANDOSTR" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_CARCORTE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_OPOS" Type="int" Nullable="false" />
+    <Property Name="cu_NOMBREOPOS" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_ACTIVO" Type="int" Nullable="false" />
+    <Property Name="cu_IHOJILLA" Type="bit" Nullable="false" />
+    <Property Name="cu_IMP_CHEQUES" Type="bit" Nullable="false" />
+    <Property Name="cu_ROTACION" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_DOCUMENTOS_FISCAL">
+    <Key>
+      <PropertyRef Name="cu_DocumentoStellar" />
+      <PropertyRef Name="cu_DocumentoTipo" />
+      <PropertyRef Name="cu_Localidad" />
+    </Key>
+    <Property Name="cu_DocumentoStellar" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_DocumentoFiscal" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_DocumentoTipo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_Localidad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_SerialImpresora" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cu_ZFiscal" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_ESTRUC_CAJA">
+    <Key>
+      <PropertyRef Name="CLAVE" />
+    </Key>
+    <Property Name="CLAVE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TEXTO" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="RELACION" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fondo" Type="image" />
+  </EntityType>
+  <EntityType Name="MA_ETIQUETAS">
+    <Key>
+      <PropertyRef Name="C_CODIGO" />
+      <PropertyRef Name="C_DESCRIPCIO" />
+    </Key>
+    <Property Name="C_CODIGO" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="C_DESCRIPCIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_LONGITUD" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="N_LONGITUD" Type="float" Nullable="false" />
+    <Property Name="N_POS_INI_1" Type="int" Nullable="false" />
+    <Property Name="N_CARACTERES_1" Type="int" Nullable="false" />
+    <Property Name="C_CAMPO" Type="int" Nullable="false" />
+    <Property Name="N_POS_INI_2" Type="int" Nullable="false" />
+    <Property Name="N_CARACTERES_2" Type="int" Nullable="false" />
+    <Property Name="B_MANEJA_DECIMAL" Type="bit" Nullable="false" />
+    <Property Name="N_POS_INI_3" Type="int" Nullable="false" />
+    <Property Name="N_CARACTERES_3" Type="int" Nullable="false" />
+    <Property Name="B_ACTIVA" Type="bit" Nullable="false" />
+    <Property Name="B_VERIFICADIGITO" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.MA_HABLADORES_BITACORA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MA_HABLADORES_BITACORA">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Equipo" />
+      <PropertyRef Name="f_fechahora" />
+      <PropertyRef Name="c_usuario" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Equipo" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="f_fechahora" Type="datetime" Nullable="false" />
+    <Property Name="c_usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_IMPRESORAS">
+    <Key>
+      <PropertyRef Name="cs_NUMERO" />
+    </Key>
+    <Property Name="cs_NUMERO" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="cs_NOMBRE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_RELACION" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bu_por_puerto" Type="bit" Nullable="false" />
+    <Property Name="nu_llevar" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_OPERACIONES_AUTORIZADAS">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Proceso" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_PAGOS">
+    <Key>
+      <PropertyRef Name="c_Caja" />
+      <PropertyRef Name="c_Numero" />
+      <PropertyRef Name="c_Sucursal" />
+      <PropertyRef Name="c_Concepto" />
+    </Key>
+    <Property Name="c_Caja" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_Numero" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="f_Fecha" Type="datetime" Nullable="false" />
+    <Property Name="f_Hora" Type="datetime" Nullable="false" />
+    <Property Name="c_Cliente" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="n_Subtotal" Type="float" Nullable="false" />
+    <Property Name="n_Impuesto" Type="float" Nullable="false" />
+    <Property Name="n_Total" Type="float" Nullable="false" />
+    <Property Name="n_Cancelado" Type="float" Nullable="false" />
+    <Property Name="n_Vuelto" Type="float" Nullable="false" />
+    <Property Name="c_Sucursal" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_Usuario" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="t_Venta" Type="float" Nullable="false" />
+    <Property Name="n_Productos" Type="int" Nullable="false" />
+    <Property Name="c_Concepto" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_Desc_Cliente" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c_Rif" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="n_BaseImp" Type="float" Nullable="false" />
+    <Property Name="n_Descuento" Type="float" Nullable="false" />
+    <Property Name="Turno" Type="float" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cu_Direccion_Cliente" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_Numero_Bajada" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="bs_Impresa" Type="bit" Nullable="false" />
+    <Property Name="bs_Contribuyente" Type="bit" Nullable="false" />
+    <Property Name="cs_Documento_Rel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cs_NumBajada_Destino" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_PAGOS_IMPUESTOS">
+    <Key>
+      <PropertyRef Name="c_Numero" />
+      <PropertyRef Name="c_Concepto" />
+      <PropertyRef Name="c_Localidad" />
+      <PropertyRef Name="n_PorcImp" />
+    </Key>
+    <Property Name="c_Numero" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_Concepto" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_Localidad" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="n_MontoBase" Type="float" Nullable="false" />
+    <Property Name="n_PorcImp" Type="float" Nullable="false" />
+    <Property Name="n_MontoImp" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="c_Codigo" />
+    </Key>
+    <Property Name="c_Codigo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_Descri" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="c_Departamento" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_Grupo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_Subgrupo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_Marca" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_Modelo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c_Procede" Type="bit" Nullable="false" />
+    <Property Name="n_CostoAct" Type="float" Nullable="false" />
+    <Property Name="n_CostoAnt" Type="float" Nullable="false" />
+    <Property Name="n_CostoPro" Type="float" Nullable="false" />
+    <Property Name="n_CostoRep" Type="float" Nullable="false" />
+    <Property Name="n_Precio1" Type="float" Nullable="false" />
+    <Property Name="n_Precio2" Type="float" Nullable="false" />
+    <Property Name="n_Precio3" Type="float" Nullable="false" />
+    <Property Name="c_Seriales" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="c_Compuesto" Type="int" Nullable="false" />
+    <Property Name="c_Presenta" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="n_Peso" Type="float" Nullable="false" />
+    <Property Name="n_Volumen" Type="float" Nullable="false" />
+    <Property Name="n_CantiBul" Type="float" Nullable="false" />
+    <Property Name="n_PesoBul" Type="float" Nullable="false" />
+    <Property Name="n_VolBul" Type="float" Nullable="false" />
+    <Property Name="c_FileImagen" Type="image" />
+    <Property Name="n_Impuesto1" Type="float" Nullable="false" />
+    <Property Name="n_Impuesto2" Type="float" Nullable="false" />
+    <Property Name="n_Impuesto3" Type="float" Nullable="false" />
+    <Property Name="c_Cod_Arancel" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="c_Des_Arancel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="n_Por_Arancel" Type="float" Nullable="false" />
+    <Property Name="n_Costo_Original" Type="float" Nullable="false" />
+    <Property Name="c_Observacio" Type="ntext" Nullable="false" />
+    <Property Name="n_Activo" Type="int" Nullable="false" />
+    <Property Name="n_TipoPeso" Type="int" Nullable="false" />
+    <Property Name="n_PrecioO" Type="float" Nullable="false" />
+    <Property Name="f_Inicial" Type="datetime" Nullable="false" />
+    <Property Name="f_Final" Type="datetime" Nullable="false" />
+    <Property Name="h_Inicial" Type="datetime" Nullable="false" />
+    <Property Name="h_Final" Type="datetime" Nullable="false" />
+    <Property Name="Add_Date" Type="datetime" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+    <Property Name="c_CodFabricante" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Hablador" Type="int" Nullable="false" />
+    <Property Name="c_CodMoneda" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cant_Decimales" Type="int" Nullable="false" />
+    <Property Name="Moneda_Ant" Type="float" Nullable="false" />
+    <Property Name="Moneda_Act" Type="float" Nullable="false" />
+    <Property Name="Moneda_Pro" Type="float" Nullable="false" />
+    <Property Name="c_Codigo_Base" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_Descri_Base" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text4" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text5" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text6" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text7" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text8" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date1" Type="datetime" Nullable="false" />
+    <Property Name="Nume1" Type="float" Nullable="false" />
+    <Property Name="n_Cantidad_Tmp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_Cod_Plantilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_UsuarioAdd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_UsuarioUpd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="n_Prod_Ext" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="n_Pro_Ext" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nu_Tipo_Producto" Type="int" Nullable="false" />
+    <Property Name="nu_InsumoInterno" Type="int" Nullable="false" />
+    <Property Name="nu_PrecioRegulado" Type="int" Nullable="false" />
+    <Property Name="nu_PocentajeMerma" Type="float" Nullable="false" />
+    <Property Name="nu_NivelClave" Type="int" Nullable="false" />
+    <Property Name="cu_Descripcion_Corta" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bs_PermiteTeclado" Type="bit" Nullable="false" />
+    <Property Name="bs_PermiteCantidad" Type="bit" Nullable="false" />
+    <Property Name="nu_StockMin" Type="float" Nullable="false" />
+    <Property Name="nu_StockMax" Type="float" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_REPORTES">
+    <Key>
+      <PropertyRef Name="cs_CODIGO_REPORTE" />
+    </Key>
+    <Property Name="cs_CODIGO_REPORTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="cu_DESCRIPCION_REPORTE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cu_SQL" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_FECHA_CREADO" Type="datetime" Nullable="false" />
+    <Property Name="cs_FECHA_MODIFICADO" Type="datetime" Nullable="false" />
+    <Property Name="cs_RUTA" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="cs_RUTA_REMOTA" Type="nvarchar" MaxLength="4000" Nullable="false" />
+    <Property Name="bu_POR_PUERTO" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_TRANSACCION">
+    <Key>
+      <PropertyRef Name="c_Numero" />
+      <PropertyRef Name="c_Caja" />
+      <PropertyRef Name="f_Fecha" />
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="c_Localidad" />
+      <PropertyRef Name="Cod_Principal" />
+      <PropertyRef Name="c_Concepto" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="c_Numero" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_Caja" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="f_Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Cantidad" Type="float" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
+    <Property Name="Subtotal" Type="float" Nullable="false" />
+    <Property Name="Impuesto" Type="float" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Descuento" Type="float" Nullable="false" />
+    <Property Name="Impuesto1" Type="float" Nullable="false" />
+    <Property Name="Impuesto2" Type="float" Nullable="false" />
+    <Property Name="Impuesto3" Type="float" Nullable="false" />
+    <Property Name="Estatus" Type="int" Nullable="false" />
+    <Property Name="n_Costo" Type="float" Nullable="false" />
+    <Property Name="c_Localidad" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cod_Principal" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="n_Devueltos" Type="float" Nullable="false" />
+    <Property Name="n_PrecioReal" Type="float" Nullable="false" />
+    <Property Name="h_Hora" Type="datetime" />
+    <Property Name="n_Linea" Type="int" />
+    <Property Name="c_Concepto" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="c_Usuario" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Turno" Type="float" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cu_Texto" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MA_VENDEDORES">
+    <Key>
+      <PropertyRef Name="CU_VENDEDOR_COD" />
+    </Key>
+    <Property Name="CU_VENDEDOR_COD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CU_VENDEDOR_DES" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="BU_ACTIVO" Type="bit" Nullable="false" />
+    <Property Name="cs_RELACION" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="cs_LOCALIDAD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="cs_LOGIN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_PASSWORD" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_INGRESO" Type="datetime" Nullable="false" />
+    <Property Name="cs_MODIFICADO" Type="datetime" Nullable="false" />
+    <Property Name="cs_GRUPO_COMISION" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="bu_cualquier_cuenta" Type="bit" Nullable="false" />
+    <Property Name="cu_rif" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_grupo" Type="nvarchar" MaxLength="100" />
+    <Property Name="cs_tipo" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_COMISIONES" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.TMP_PRODXPROV' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TMP_PRODXPROV">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="c_codigo" Type="nvarchar" MaxLength="15" />
+    <Property Name="c_codprovee" Type="nvarchar" MaxLength="10" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_CAJA">
+    <Key>
+      <PropertyRef Name="cs_CAJA" />
+      <PropertyRef Name="C_Codigo" />
+      <PropertyRef Name="C_Cajero" />
+      <PropertyRef Name="Turno" />
+      <PropertyRef Name="ns_TURNO" />
+      <PropertyRef Name="cs_CAJERO" />
+    </Key>
+    <Property Name="cs_CAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_Codigo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_Cajero" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="C_Desc_Cajero" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="N_Cortes" Type="int" Nullable="false" />
+    <Property Name="N_Vendido" Type="float" Nullable="false" />
+    <Property Name="N_Compras" Type="int" Nullable="false" />
+    <Property Name="c_estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="h_inicio" Type="datetime" Nullable="false" />
+    <Property Name="h_final" Type="datetime" />
+    <Property Name="n_suspendido" Type="float" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="d_fecha_inicio" Type="datetime" Nullable="false" />
+    <Property Name="d_fecha_cierre" Type="datetime" />
+    <Property Name="B_INVENTARIO" Type="bit" Nullable="false" />
+    <Property Name="N_MONTOREINTEGRO_TOT" Type="float" Nullable="false" />
+    <Property Name="N_REINTEGRO_TOT" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cs_ORGANIZACION" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="cs_LOCALIDAD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ns_TURNO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="cs_ESTADO" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ds_FECHA_INICIO" Type="datetime" Nullable="false" />
+    <Property Name="ds_FECHA_CIERRE" Type="datetime" />
+    <Property Name="cs_CAJERO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="cs_NOMBRE_CAJERO" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ns_NUMERO_OPERACIONES" Type="int" Nullable="false" />
+    <Property Name="ns_MONTO_VENDIDO" Type="float" Nullable="false" />
+    <Property Name="ns_NUMERO_DEVOLUCIONES" Type="int" Nullable="false" />
+    <Property Name="ns_MONTO_DEVUELTO" Type="float" Nullable="false" />
+    <Property Name="nu_REINTEGROS_TOTALES" Type="int" Nullable="false" />
+    <Property Name="nu_MONTOREINTEGRO_TOTAL" Type="float" Nullable="false" />
+    <Property Name="nu_monto_retiros" Type="float" Nullable="false" />
+    <Property Name="ns_CORTES" Type="int" Nullable="false" />
+    <Property Name="ns_SUSPENDIDO" Type="float" Nullable="false" />
+    <Property Name="bs_INVENTARIO" Type="bit" Nullable="false" />
+    <Property Name="nu_montofondo" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_CIERRES">
+    <Key>
+      <PropertyRef Name="c_DOCUMENTO" />
+      <PropertyRef Name="c_CODLOCALIDAD" />
+      <PropertyRef Name="c_CODMONEDA" />
+      <PropertyRef Name="c_CODDENOMINA" />
+      <PropertyRef Name="C_Concepto" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="c_DOCUMENTO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="d_FECHA" Type="datetime" />
+    <Property Name="c_CODLOCALIDAD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_CODMONEDA" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_CODDENOMINA" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="c_CODBANCO" Type="nvarchar" MaxLength="10" />
+    <Property Name="n_FACTOR" Type="float" />
+    <Property Name="n_CANTIDAD" Type="int" />
+    <Property Name="n_BOLIVARES" Type="float" />
+    <Property Name="c_TDC" Type="nvarchar" MaxLength="50" />
+    <Property Name="c_cerrado" Type="int" Nullable="false" />
+    <Property Name="C_Concepto" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="C_Real" Type="nvarchar" MaxLength="1" />
+    <Property Name="C_Codcajero" Type="nvarchar" MaxLength="15" />
+    <Property Name="C_Factura" Type="nvarchar" MaxLength="1" />
+    <Property Name="n_depositado" Type="int" Nullable="false" />
+    <Property Name="n_falta" Type="int" />
+    <Property Name="n_valor" Type="float" />
+    <Property Name="c_num_cierre" Type="varchar" MaxLength="15" />
+    <Property Name="TURNO" Type="float" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CS_TMPUSUARIO" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_OPERACIONES_AUTORIZADAS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="caja" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="codigoCajero" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="turno" Type="int" Nullable="false" />
+    <Property Name="codigoUsuarioAutorizante" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="operacionRealizada" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="codigoCliente" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="idCliente" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="nombreCliente" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipoDocumento" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="numeroDocumento" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.TR_PEND_CLIENTES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TR_PEND_CLIENTES">
+    <Key>
+      <PropertyRef Name="c_CODCLIENTE" />
+      <PropertyRef Name="c_DESCRIPCIO" />
+      <PropertyRef Name="c_GRUPO" />
+      <PropertyRef Name="c_RIF" />
+      <PropertyRef Name="C_NIT" />
+      <PropertyRef Name="c_REPRESENTA" />
+      <PropertyRef Name="c_CARGO" />
+      <PropertyRef Name="c_DIRECCION" />
+      <PropertyRef Name="c_CIUDAD" />
+      <PropertyRef Name="c_ESTADO" />
+      <PropertyRef Name="c_PAIS" />
+      <PropertyRef Name="c_EMAIL" />
+      <PropertyRef Name="c_TELEFONO" />
+      <PropertyRef Name="c_FAX" />
+      <PropertyRef Name="c_WEB" />
+      <PropertyRef Name="n_LIMITE" />
+      <PropertyRef Name="n_DIAS" />
+      <PropertyRef Name="n_PRECIO" />
+      <PropertyRef Name="n_DESCUENTO" />
+      <PropertyRef Name="c_OBSERVACIO" />
+      <PropertyRef Name="c_impuesto" />
+      <PropertyRef Name="n_activo" />
+      <PropertyRef Name="update_date" />
+      <PropertyRef Name="add_date" />
+      <PropertyRef Name="f_cumpleanos" />
+      <PropertyRef Name="ESTATUS" />
+      <PropertyRef Name="N_CAJA" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="N_TIPO1" />
+      <PropertyRef Name="C_CODCLIENTE_REL1" />
+      <PropertyRef Name="N_RETENCION1" />
+      <PropertyRef Name="Nu_tipodescuento" />
+      <PropertyRef Name="N_DiasIntMora" />
+      <PropertyRef Name="N_InteresesMora" />
+      <PropertyRef Name="N_TIPO" />
+      <PropertyRef Name="C_CODCLIENTE_REL" />
+      <PropertyRef Name="N_RETENCION" />
+      <PropertyRef Name="TIPO_CAMBIO" />
+      <PropertyRef Name="CS_COMPRADOR" />
+      <PropertyRef Name="CS_CODFRECUENTE" />
+      <PropertyRef Name="BS_CONTRIBUYENTE" />
+    </Key>
+    <Property Name="c_CODCLIENTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="c_DESCRIPCIO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_GRUPO" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="c_RIF" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="C_NIT" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_REPRESENTA" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="c_CARGO" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="c_DIRECCION" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="c_CIUDAD" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="c_ESTADO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="c_PAIS" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="c_EMAIL" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="c_TELEFONO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_FAX" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="c_WEB" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="n_LIMITE" Type="float" Nullable="false" />
+    <Property Name="n_DIAS" Type="smallint" Nullable="false" />
+    <Property Name="n_PRECIO" Type="smallint" Nullable="false" />
+    <Property Name="n_DESCUENTO" Type="float" Nullable="false" />
+    <Property Name="c_OBSERVACIO" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="c_impuesto" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="n_activo" Type="bit" Nullable="false" />
+    <Property Name="update_date" Type="datetime" Nullable="false" />
+    <Property Name="add_date" Type="datetime" Nullable="false" />
+    <Property Name="f_cumpleanos" Type="datetime" Nullable="false" />
+    <Property Name="ESTATUS" Type="int" Nullable="false" />
+    <Property Name="N_CAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="N_TIPO1" Type="int" Nullable="false" />
+    <Property Name="C_CODCLIENTE_REL1" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="N_RETENCION1" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nu_tipodescuento" Type="int" Nullable="false" />
+    <Property Name="N_DiasIntMora" Type="int" Nullable="false" />
+    <Property Name="N_InteresesMora" Type="float" Nullable="false" />
+    <Property Name="c_fileimagen" Type="image" />
+    <Property Name="N_TIPO" Type="int" Nullable="false" />
+    <Property Name="C_CODCLIENTE_REL" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="N_RETENCION" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NU_PUNTOSACUMULADOS" Type="float" />
+    <Property Name="RESTRINGIDO" Type="bit" />
+    <Property Name="TIPO_CAMBIO" Type="int" Nullable="false" />
+    <Property Name="CS_COMPRADOR" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CS_CODFRECUENTE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BS_CONTRIBUYENTE" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_PEND_USUARIOS">
+    <Key>
+      <PropertyRef Name="CODUSUARIO" />
+      <PropertyRef Name="LOCALIDAD" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CODUSUARIO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LOGIN_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CLAVE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="LOCALIDAD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NIVEL" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="VENDEDOR" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ADD_DATE" Type="datetime" Nullable="false" />
+    <Property Name="UPDATE_DATE" Type="datetime" Nullable="false" />
+    <Property Name="TIPO_USUARIO" Type="bit" Nullable="false" />
+    <Property Name="MOD_PRECIO_VENTA" Type="bit" Nullable="false" />
+    <Property Name="MOD_COSTO_COMPRA" Type="bit" Nullable="false" />
+    <Property Name="N_CAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="TIPO_CAMBIO" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BU_CAMBIA_CLAVE" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.TR_PENDIENTE_PRODUCTOS_COMPUESTOS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TR_PENDIENTE_PRODUCTOS_COMPUESTOS">
+    <Key>
+      <PropertyRef Name="cs_CODIGO_PRODUCTO" />
+      <PropertyRef Name="cu_CANTIDAD" />
+      <PropertyRef Name="cu_CODIGO_PARTE" />
+      <PropertyRef Name="cs_TIPOCAMBIO" />
+      <PropertyRef Name="cs_NCAJA" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="cs_CODIGO_PRODUCTO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="cu_CANTIDAD" Type="float" Nullable="false" />
+    <Property Name="cu_CODIGO_PARTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="cs_TIPOCAMBIO" Type="int" Nullable="false" />
+    <Property Name="cs_NCAJA" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'VAD20.dbo.TR_REPORTES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TR_REPORTES">
+    <Key>
+      <PropertyRef Name="cs_CODIGO_REPORTE" />
+      <PropertyRef Name="cs_BASE_DATOS" />
+      <PropertyRef Name="cs_TABLA" />
+      <PropertyRef Name="cs_DESCRIPCION" />
+      <PropertyRef Name="cs_CAMPO" />
+      <PropertyRef Name="cs_NOMBRE_VARIABLE" />
+      <PropertyRef Name="cs_TIPOCAMPO" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="cs_CODIGO_REPORTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="cs_BASE_DATOS" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_TABLA" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_DESCRIPCION" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_CAMPO" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_NOMBRE_VARIABLE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cs_TIPOCAMPO" Type="int" Nullable="false" />
+    <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="VAD20ModelStoreContainer">
+    <EntitySet Name="MA_CAJA" EntityType="Self.MA_CAJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CAJA_BOTONES" EntityType="Self.MA_CAJA_BOTONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CAJA_CONFIGURACION" EntityType="Self.MA_CAJA_CONFIGURACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CAMBIOS" EntityType="Self.MA_CAMBIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CIERRES" EntityType="Self.MA_CIERRES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CIERRExFACTURA" EntityType="Self.MA_CIERRExFACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CODIGOS" EntityType="Self.MA_CODIGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_CONSUMO_TIPOS" EntityType="Self.MA_CONSUMO_TIPOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_DETALLEPAGO" EntityType="Self.MA_DETALLEPAGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_DISPOSITIVOS" EntityType="Self.MA_DISPOSITIVOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_DISPOSITIVOS_CAJA" EntityType="Self.MA_DISPOSITIVOS_CAJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_DOCUMENTOS_FISCAL" EntityType="Self.MA_DOCUMENTOS_FISCAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_ESTRUC_CAJA" EntityType="Self.MA_ESTRUC_CAJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_ETIQUETAS" EntityType="Self.MA_ETIQUETAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_IMPRESORAS" EntityType="Self.MA_IMPRESORAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_OPERACIONES_AUTORIZADAS" EntityType="Self.MA_OPERACIONES_AUTORIZADAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_PAGOS" EntityType="Self.MA_PAGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_PAGOS_IMPUESTOS" EntityType="Self.MA_PAGOS_IMPUESTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_PRODUCTOS" EntityType="Self.MA_PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_REPORTES" EntityType="Self.MA_REPORTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_TRANSACCION" EntityType="Self.MA_TRANSACCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_VENDEDORES" EntityType="Self.MA_VENDEDORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_CAJA" EntityType="Self.TR_CAJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_CIERRES" EntityType="Self.TR_CIERRES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_OPERACIONES_AUTORIZADAS" EntityType="Self.TR_OPERACIONES_AUTORIZADAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_PEND_USUARIOS" EntityType="Self.TR_PEND_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MA_ACTUALIZACION_INVENTARIO_PENDIENTE" EntityType="Self.MA_ACTUALIZACION_INVENTARIO_PENDIENTE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[cs_codcaja] AS [cs_codcaja], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[cs_codcajero] AS [cs_codcajero], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[cs_descripcioncajero] AS [cs_descripcioncajero], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[cs_codlocalidad] AS [cs_codlocalidad], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[ns_turno] AS [ns_turno], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[cs_codusuario] AS [cs_codusuario], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[ds_fechacierre] AS [ds_fechacierre], 
+    [MA_ACTUALIZACION_INVENTARIO_PENDIENTE].[ds_fechafallo] AS [ds_fechafallo]
+    FROM [dbo].[MA_ACTUALIZACION_INVENTARIO_PENDIENTE] AS [MA_ACTUALIZACION_INVENTARIO_PENDIENTE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MA_CONCEPTOS" EntityType="Self.MA_CONCEPTOS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MA_CONCEPTOS].[IDCONCEPTO] AS [IDCONCEPTO], 
+    [MA_CONCEPTOS].[DESCRIPCION] AS [DESCRIPCION], 
+    [MA_CONCEPTOS].[IDPROCESO] AS [IDPROCESO], 
+    [MA_CONCEPTOS].[DE_SISTEMA] AS [DE_SISTEMA], 
+    [MA_CONCEPTOS].[Documento] AS [Documento], 
+    [MA_CONCEPTOS].[Predeterminada] AS [Predeterminada], 
+    [MA_CONCEPTOS].[nu_nivelusuario] AS [nu_nivelusuario], 
+    [MA_CONCEPTOS].[bu_activo] AS [bu_activo], 
+    [MA_CONCEPTOS].[bu_consideraimpuesto] AS [bu_consideraimpuesto], 
+    [MA_CONCEPTOS].[bu_Conceptodeservicio] AS [bu_Conceptodeservicio], 
+    [MA_CONCEPTOS].[bu_ConsideraLibro] AS [bu_ConsideraLibro], 
+    [MA_CONCEPTOS].[bu_ConceptoRetencion] AS [bu_ConceptoRetencion], 
+    [MA_CONCEPTOS].[bu_RequiereUnidad] AS [bu_RequiereUnidad], 
+    [MA_CONCEPTOS].[bu_ConsolidarFactura] AS [bu_ConsolidarFactura]
+    FROM [dbo].[MA_CONCEPTOS] AS [MA_CONCEPTOS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MA_CORRELATIVO_RETENCION" EntityType="Self.MA_CORRELATIVO_RETENCION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MA_CORRELATIVO_RETENCION].[CS_CAMPO] AS [CS_CAMPO], 
+    [MA_CORRELATIVO_RETENCION].[CS_DESCRIPCION] AS [CS_DESCRIPCION]
+    FROM [dbo].[MA_CORRELATIVO_RETENCION] AS [MA_CORRELATIVO_RETENCION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MA_DENOMINACIONES" EntityType="Self.MA_DENOMINACIONES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MA_DENOMINACIONES].[c_codmoneda] AS [c_codmoneda], 
+    [MA_DENOMINACIONES].[c_coddenomina] AS [c_coddenomina], 
+    [MA_DENOMINACIONES].[c_denominacion] AS [c_denominacion], 
+    [MA_DENOMINACIONES].[n_valor] AS [n_valor], 
+    [MA_DENOMINACIONES].[c_real] AS [c_real], 
+    [MA_DENOMINACIONES].[N_CANTIDAD] AS [N_CANTIDAD], 
+    [MA_DENOMINACIONES].[N_BOLIVARES] AS [N_BOLIVARES], 
+    [MA_DENOMINACIONES].[N_ENTRADO] AS [N_ENTRADO], 
+    [MA_DENOMINACIONES].[N_FACTOR] AS [N_FACTOR]
+    FROM [dbo].[MA_DENOMINACIONES] AS [MA_DENOMINACIONES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MA_HABLADORES_BITACORA" EntityType="Self.MA_HABLADORES_BITACORA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MA_HABLADORES_BITACORA].[id] AS [id], 
+    [MA_HABLADORES_BITACORA].[Equipo] AS [Equipo], 
+    [MA_HABLADORES_BITACORA].[f_fechahora] AS [f_fechahora], 
+    [MA_HABLADORES_BITACORA].[c_usuario] AS [c_usuario]
+    FROM [dbo].[MA_HABLADORES_BITACORA] AS [MA_HABLADORES_BITACORA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TMP_PRODXPROV" EntityType="Self.TMP_PRODXPROV" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TMP_PRODXPROV].[c_codigo] AS [c_codigo], 
+    [TMP_PRODXPROV].[c_codprovee] AS [c_codprovee], 
+    [TMP_PRODXPROV].[id] AS [id]
+    FROM [dbo].[TMP_PRODXPROV] AS [TMP_PRODXPROV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TR_PEND_CLIENTES" EntityType="Self.TR_PEND_CLIENTES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TR_PEND_CLIENTES].[c_CODCLIENTE] AS [c_CODCLIENTE], 
+    [TR_PEND_CLIENTES].[c_DESCRIPCIO] AS [c_DESCRIPCIO], 
+    [TR_PEND_CLIENTES].[c_GRUPO] AS [c_GRUPO], 
+    [TR_PEND_CLIENTES].[c_RIF] AS [c_RIF], 
+    [TR_PEND_CLIENTES].[C_NIT] AS [C_NIT], 
+    [TR_PEND_CLIENTES].[c_REPRESENTA] AS [c_REPRESENTA], 
+    [TR_PEND_CLIENTES].[c_CARGO] AS [c_CARGO], 
+    [TR_PEND_CLIENTES].[c_DIRECCION] AS [c_DIRECCION], 
+    [TR_PEND_CLIENTES].[c_CIUDAD] AS [c_CIUDAD], 
+    [TR_PEND_CLIENTES].[c_ESTADO] AS [c_ESTADO], 
+    [TR_PEND_CLIENTES].[c_PAIS] AS [c_PAIS], 
+    [TR_PEND_CLIENTES].[c_EMAIL] AS [c_EMAIL], 
+    [TR_PEND_CLIENTES].[c_TELEFONO] AS [c_TELEFONO], 
+    [TR_PEND_CLIENTES].[c_FAX] AS [c_FAX], 
+    [TR_PEND_CLIENTES].[c_WEB] AS [c_WEB], 
+    [TR_PEND_CLIENTES].[n_LIMITE] AS [n_LIMITE], 
+    [TR_PEND_CLIENTES].[n_DIAS] AS [n_DIAS], 
+    [TR_PEND_CLIENTES].[n_PRECIO] AS [n_PRECIO], 
+    [TR_PEND_CLIENTES].[n_DESCUENTO] AS [n_DESCUENTO], 
+    [TR_PEND_CLIENTES].[c_OBSERVACIO] AS [c_OBSERVACIO], 
+    [TR_PEND_CLIENTES].[c_impuesto] AS [c_impuesto], 
+    [TR_PEND_CLIENTES].[n_activo] AS [n_activo], 
+    [TR_PEND_CLIENTES].[update_date] AS [update_date], 
+    [TR_PEND_CLIENTES].[add_date] AS [add_date], 
+    [TR_PEND_CLIENTES].[f_cumpleanos] AS [f_cumpleanos], 
+    [TR_PEND_CLIENTES].[ESTATUS] AS [ESTATUS], 
+    [TR_PEND_CLIENTES].[N_CAJA] AS [N_CAJA], 
+    [TR_PEND_CLIENTES].[ID] AS [ID], 
+    [TR_PEND_CLIENTES].[N_TIPO1] AS [N_TIPO1], 
+    [TR_PEND_CLIENTES].[C_CODCLIENTE_REL1] AS [C_CODCLIENTE_REL1], 
+    [TR_PEND_CLIENTES].[N_RETENCION1] AS [N_RETENCION1], 
+    [TR_PEND_CLIENTES].[Nu_tipodescuento] AS [Nu_tipodescuento], 
+    [TR_PEND_CLIENTES].[N_DiasIntMora] AS [N_DiasIntMora], 
+    [TR_PEND_CLIENTES].[N_InteresesMora] AS [N_InteresesMora], 
+    [TR_PEND_CLIENTES].[c_fileimagen] AS [c_fileimagen], 
+    [TR_PEND_CLIENTES].[N_TIPO] AS [N_TIPO], 
+    [TR_PEND_CLIENTES].[C_CODCLIENTE_REL] AS [C_CODCLIENTE_REL], 
+    [TR_PEND_CLIENTES].[N_RETENCION] AS [N_RETENCION], 
+    [TR_PEND_CLIENTES].[NU_PUNTOSACUMULADOS] AS [NU_PUNTOSACUMULADOS], 
+    [TR_PEND_CLIENTES].[RESTRINGIDO] AS [RESTRINGIDO], 
+    [TR_PEND_CLIENTES].[TIPO_CAMBIO] AS [TIPO_CAMBIO], 
+    [TR_PEND_CLIENTES].[CS_COMPRADOR] AS [CS_COMPRADOR], 
+    [TR_PEND_CLIENTES].[CS_CODFRECUENTE] AS [CS_CODFRECUENTE], 
+    [TR_PEND_CLIENTES].[BS_CONTRIBUYENTE] AS [BS_CONTRIBUYENTE]
+    FROM [dbo].[TR_PEND_CLIENTES] AS [TR_PEND_CLIENTES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TR_PENDIENTE_PRODUCTOS_COMPUESTOS" EntityType="Self.TR_PENDIENTE_PRODUCTOS_COMPUESTOS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[cs_CODIGO_PRODUCTO] AS [cs_CODIGO_PRODUCTO], 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[cu_CANTIDAD] AS [cu_CANTIDAD], 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[cu_CODIGO_PARTE] AS [cu_CODIGO_PARTE], 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[cs_TIPOCAMBIO] AS [cs_TIPOCAMBIO], 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[cs_NCAJA] AS [cs_NCAJA], 
+    [TR_PENDIENTE_PRODUCTOS_COMPUESTOS].[ID] AS [ID]
+    FROM [dbo].[TR_PENDIENTE_PRODUCTOS_COMPUESTOS] AS [TR_PENDIENTE_PRODUCTOS_COMPUESTOS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TR_REPORTES" EntityType="Self.TR_REPORTES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TR_REPORTES].[cs_CODIGO_REPORTE] AS [cs_CODIGO_REPORTE], 
+    [TR_REPORTES].[cs_BASE_DATOS] AS [cs_BASE_DATOS], 
+    [TR_REPORTES].[cs_TABLA] AS [cs_TABLA], 
+    [TR_REPORTES].[cs_DESCRIPCION] AS [cs_DESCRIPCION], 
+    [TR_REPORTES].[cs_CAMPO] AS [cs_CAMPO], 
+    [TR_REPORTES].[cs_NOMBRE_VARIABLE] AS [cs_NOMBRE_VARIABLE], 
+    [TR_REPORTES].[cs_TIPOCAMPO] AS [cs_TIPOCAMPO], 
+    [TR_REPORTES].[ID] AS [ID]
+    FROM [dbo].[TR_REPORTES] AS [TR_REPORTES]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

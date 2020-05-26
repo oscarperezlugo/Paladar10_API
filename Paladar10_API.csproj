@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03447BEE-9AF2-472A-9F90-7D8AA1EB975E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaladarVAD10API</RootNamespace>
+    <AssemblyName>PaladarVAD10API</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44396</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MA_BANCOSController.cs" />
+    <Compile Include="Controllers\MA_CAMBIOCODIGOController.cs" />
+    <Compile Include="Controllers\MA_CLIENTESController.cs" />
+    <Compile Include="Controllers\MA_CODIGOSController.cs" />
+    <Compile Include="Controllers\MA_COMPRASController.cs" />
+    <Compile Include="Controllers\MA_COMPRAS_IMPUESTOSController.cs" />
+    <Compile Include="Controllers\MA_CONCEPTOSController.cs" />
+    <Compile Include="Controllers\MA_CONFIG_LIBROController.cs" />
+    <Compile Include="Controllers\MA_CORRELATIVOSController.cs" />
+    <Compile Include="Controllers\MA_CORRELATIVO_RETENCIONController.cs" />
+    <Compile Include="Controllers\MA_CXPController.cs" />
+    <Compile Include="Controllers\MA_CXP_DETPAGController.cs" />
+    <Compile Include="Controllers\MA_CXP_IMPUESTOSController.cs" />
+    <Compile Include="Controllers\MA_DENOMINACIONESController.cs" />
+    <Compile Include="Controllers\MA_DEPARTAMENTOSController.cs" />
+    <Compile Include="Controllers\MA_DEPOPRODController.cs" />
+    <Compile Include="Controllers\MA_DEPOSITOController.cs" />
+    <Compile Include="Controllers\MA_ELAB_INVENTARIOController.cs" />
+    <Compile Include="Controllers\MA_ESTRUCT_REPORTController.cs" />
+    <Compile Include="Controllers\MA_FORMATO_BANCOS_ASOCIA_CAMPOSController.cs" />
+    <Compile Include="Controllers\MA_GRUPOSController.cs" />
+    <Compile Include="Controllers\MA_HISTORICO_COSTO_PRECIOController.cs" />
+    <Compile Include="Controllers\MA_HISTORICO_MONEDASController.cs" />
+    <Compile Include="Controllers\MA_IMPRESORA_ETIQUETAController.cs" />
+    <Compile Include="Controllers\MA_INVENTARIOController.cs" />
+    <Compile Include="Controllers\MA_INV_FISICOController.cs" />
+    <Compile Include="Controllers\MA_LIBROS_CONFIGURADOSController.cs" />
+    <Compile Include="Controllers\MA_MODULO_PROCESOController.cs" />
+    <Compile Include="Controllers\MA_MONEDASController.cs" />
+    <Compile Include="Controllers\MA_ODCController.cs" />
+    <Compile Include="Controllers\MA_ORDEN_PRODUCCIONController.cs" />
+    <Compile Include="Controllers\MA_PARTESController.cs" />
+    <Compile Include="Controllers\MA_PROCESOSController.cs" />
+    <Compile Include="Controllers\MA_PROCESOS_EMISORController.cs" />
+    <Compile Include="Controllers\MA_PRODUCCIONController.cs" />
+    <Compile Include="Controllers\MA_PRODUCTOSController.cs" />
+    <Compile Include="Controllers\MA_PRODXPROVController.cs" />
+    <Compile Include="Controllers\MA_PROVEEDORESController.cs" />
+    <Compile Include="Controllers\MA_REGLASDENEGOCIOController.cs" />
+    <Compile Include="Controllers\MA_REGLASDENEGOCIO_MODULOSController.cs" />
+    <Compile Include="Controllers\MA_REGLASDENEGOCIO_PROCESOSController.cs" />
+    <Compile Include="Controllers\MA_REQUISICION_DEPOSITOController.cs" />
+    <Compile Include="Controllers\MA_RTF_ESCController.cs" />
+    <Compile Include="Controllers\MA_SUCURSALESController.cs" />
+    <Compile Include="Controllers\MA_TABLAS_CONSOLIDARController.cs" />
+    <Compile Include="Controllers\MA_TABLAS_SYNCRONIZARController.cs" />
+    <Compile Include="Controllers\MA_TRAZA_FICHASController.cs" />
+    <Compile Include="Controllers\MA_USUARIOSController.cs" />
+    <Compile Include="Controllers\MA_VENDEDORESController.cs" />
+    <Compile Include="Controllers\MA_VENTASController.cs" />
+    <Compile Include="Controllers\MA_VENTAS_IMPUESTOSController.cs" />
+    <Compile Include="Controllers\TR_INVENTARIOController.cs" />
+    <Compile Include="Controllers\TR_INV_FISICOController.cs" />
+    <Compile Include="Controllers\TR_LIBROS_CONFIGURADOSController.cs" />
+    <Compile Include="Controllers\TR_MODULO_PROCESOController.cs" />
+    <Compile Include="Controllers\TR_ODCController.cs" />
+    <Compile Include="Controllers\TR_ORDEN_PRODUCCIONController.cs" />
+    <Compile Include="Controllers\TR_PEND_HISTORICO_MONEDASController.cs" />
+    <Compile Include="Controllers\TR_PEND_SUCURSALESController.cs" />
+    <Compile Include="Controllers\TR_PRODUCCIONController.cs" />
+    <Compile Include="Controllers\TR_REQUISICION_DEPOSITOController.cs" />
+    <Compile Include="Controllers\TR_RTF_ESCController.cs" />
+    <Compile Include="Controllers\TR_TABLAS_SYNCRONIZARController.cs" />
+    <Compile Include="Controllers\TR_VENTASController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C0NE_TIME_SCRIPT_EVENTS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C0NE_TIME_SCRIPT_EVENTS_HISTORY.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONFIGURAR_DOC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONFIGURAR_SAL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONF_MENU_USER.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUCT_IMAGEN.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUC_MENU.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUC_ORG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUC_REPORT.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUC_REPORT_CONTROLESRTF.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ESTRUC_SIS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ALERTAGRID_ALERTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ALERTAGRID_PROCESOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ALERTAGRID_PROCESOxALERTA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_AUDITORIAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_AUDITORIAS_TIPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_AUX_GRUPO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BALANZAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCOREG_X_CXP_CXC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCOSCTA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCOS_DENOMINA_COMISION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCO_CONCILIA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCO_CONFIG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BANCO_REG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_banco_registros.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_Bienes.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BLACKSTONE_PREPAID_ORDERS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BLACKSTONE_PREPAID_SERVICE_TYPE.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_BLACKSTONE_PREPAID_STATUS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CAMBIOCODIGO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CAMBIOPRECIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CAMBIOS_PREMIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CAMBIOS_PREMIOS_CONSOLIDADOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CATALOGO_PREMIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CHEQUERAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CIERRECAJA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CLIENTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CLIENTES_CONVENIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CLIENTES_DATOS_AUX.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CLIENTES_DIRECCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CODIGOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMISIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPARATIVO_PRECIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPETIDORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPRAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPRAS_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPRAS_IMPUESTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPRAS_RETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COMPRAS_UNIDADES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONCEPTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONCEPTOS_XML.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONCILIACIONAUTO_CAMBIOARCHIVO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONCILIACIONAUTO_TEMPORAL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONCILIACIONAUTO_TEXTOBANCOCONCILIADO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONFIGURACION_AUTO_DEPOSITO_CP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ma_configuracion_cambios.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONFIGURACION_MAIL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONFIG_LIBRO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_Consecutivos.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONS_PRECIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONTROL_AGENTE_ORDEN_PRODUCCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CONVENIOS_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CORRELATIVOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CORRELATIVO_RETENCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CORRIDAS_AGENTE_ADM.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CORRIDAS_AGENTE_CLIENTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_COSTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXC_DETPAG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXC_IMPUESTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXP_DETPAG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CxP_DETPAG_TMP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXP_IMPUESTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_CXP_PROG.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DATOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DATOS_FISCALES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DENOMINACIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DENOMINA_RES_INGRESOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DEPARTAMENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DEPOPROD.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DEPOSITO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DISPOSITIVOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DOCMENTOxSEL_IMPRESION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_DOCUMENTOS_FISCAL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ELAB_INVENTARIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ENTREGAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ERRORCORRIDAS_AGENTE_ADM.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ERRORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ESTRUCT_REPORT.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_FORMATO_BANCOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_FORMATO_BANCOS_ASOCIA_CAMPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_GRUPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_HISTORICO_COSTO_PRECIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_HISTORICO_IMPUESTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_HISTORICO_MONEDAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_IMPRESORAS_ETIQUETAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_IMPRESORA_ETIQUETA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_IMPUESTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_INVENTARIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_INVENTARIOxDOCUMENTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_INVENTARIO_REPORTE_TMP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_INV_FISICO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_LIBROS_CONFIGURADOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_MODIFICACIONESRECMOVIL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_MODULO_PROCESO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_MONEDAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_MONITOREO_CHEQUES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ODC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ODC_AUTOMATICAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ODC_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_OFERTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_OFERTAS_PERMANENTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_OPBANCOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_ORDEN_PRODUCCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PAGOS_ELECTRONICOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PARTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_CITAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_AUTORIZACIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_PACKING.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_PICKING.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_RUTA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_VENDEDOR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PEDIDOS_RUTA_ZONA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PLANTILLAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PLANTILLA_ESCALA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROCESOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROCESOS_EMISOR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCCION_CAPACIDAD_MAXIMA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCCION_PLANIFICACION_REQUERIDOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCTOSPARTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCTOS_ARCHIVO_EXISTENTE.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODUCTOS_GENERICOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PRODXPROV.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROGRAMACIONPAGO_MASIVA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROGRAMADOR_PAGOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROVEEDORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROVEEDORESxCLIENTE.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROVEEDORESxRETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROVEEDORES_CONVENIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_PROVEEDORES_DATOSBANCARIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_RECEPCIONESMOVIL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_RECEPCION_DE_DOCUMENTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REGLASDENEGOCIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REGLASDENEGOCIO_MODULOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REGLASDENEGOCIO_OLDSCHEMA_BAK.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REGLASDENEGOCIO_OLD_BAK.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REGLASDENEGOCIO_PROCESOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REPORTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REPORTES_DATOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REQUISICIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_REQUISICION_DEPOSITO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_RETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_RTF_ESC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SINCRONIZACION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SOLICITUD.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SOLICITUDCOMPRAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SUBGRUPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SUBIDA_ARCHIVO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SUCURSALES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_SYSTABLAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TABLAS_CONSOLIDAR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TABLAS_CONSOLIDAR_SUCURSALES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TABLAS_SYNCRONIZAR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TARJETAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TEMP_REP_HISTORICO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TRANSPORTE.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TRAZA_FICHAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_TRIBUTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_UBICACIONxCATEGORIA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_UBICACIONxPRODUCTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_UNIDADES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_UNIDADES_RELACION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_USUARIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VENDEDORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VENDEDORES_GRUPOS_COMISION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VENTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VENTAS_IMPUESTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VENTAS_RETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MA_VERSION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REGLAS_COMERCIALES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TMP_Comprobante.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TMP_FACTOR_PRECIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TMP_PROGRAMACIONPAGO_MASIVA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_AUTORIZACIONES_RECEPCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_AUX_DESPACHO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_AUX_GASTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_BANCO_BENEFICIARIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_BANCO_PRECONCILIACION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_BANCO_REG_DEP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CAMBIOPRECIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CAMBIOS_PREMIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CIERRES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CLIENTES_DATOS_AUX.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_COMISIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_COMPARATIVO_PRECIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_COMPRAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_COMPRAS_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_Comprobantes.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CONS_PRECIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_CONS_PRECIOS_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_COSTOS_INT.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_DECLARACIONADM.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_DESPACHO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_DOCUMENTOSFISCAL_NOIMP.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ESTRUCT_REPORT.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_FACTURAS_DEVUELTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_FACTURAS_PROGPAGOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_FORMATO_BANCOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_HABLADORES_OFERTASCULMINADA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_IMPRESORAS_ETIQUETAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_IMPUESTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_INTERFAZ.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_INVENTARIO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_INV_FISICO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_INV_FISICO_PDT.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_LIBROS_CONFIGURADOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_MA_COMPARATIVO_PRECIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_MODULO_PROCESO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ODC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ODC_AUTOMATICAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ODC_DESCUENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ODC_MULTIPLE_PRODXPROV.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ODC_MULTIPLE_TEMPORAL.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_OFERTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_OFERTAS_PERMANENTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_ORDEN_PRODUCCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PAGO_ELECTRONICO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEDIDOS_RUTA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PENDIENTE_CODIGO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PENDIENTE_PROD.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_BANCOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_CLIENTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_CLIENTES_DIRECCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_COMPRAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_DENOMINACION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_DEPARTAMENTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_DEPOSITO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_DESCUENTOS_PROVEEDORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_GRUPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_HISTORICO_MONEDAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_MA_CLIENTES_CONVENIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_MONEDAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_ODC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PARTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PRODUCTOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PRODUCTOSPARTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PRODUCTOS_GENERICOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PRODXPROV.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PROVEEDOR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_PROVEEDORESxRETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_REQUISICIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_RETENCIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_SUBGRUPOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_SUCURSALES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_TRANSPORTE.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_USUARIOS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PEND_VENDEDORES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PLANTILLA_ESCALA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PRODUCCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PROGRAMACIONPAGO_MASIVA.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_PuntoVentas_Tmp.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_RECEPCION.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_RECEPCION_DE_DOCUMENTO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_REPORTES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_REQUISICIONES.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_REQUISICION_DEPOSITO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_RTF_ESC.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_SOLICITUD.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_SOLICITUDCOMPRAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_SUBIDA_ARCHIVO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_TABLAS_SYNCRONIZAR.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_TEMP_REP_HISTORICO.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TR_VENTAS.cs">
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VAD10.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VAD10.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VAD10.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VAD10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VAD10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VAD10.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\VAD10.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VAD10.Context.cs</LastGenOutput>
+      <DependentUpon>VAD10.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\VAD10.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VAD10.edmx</DependentUpon>
+      <LastGenOutput>VAD10.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Models\VAD10.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VAD10.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\VAD10.edmx.diagram">
+      <DependentUpon>VAD10.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57787</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44396/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
